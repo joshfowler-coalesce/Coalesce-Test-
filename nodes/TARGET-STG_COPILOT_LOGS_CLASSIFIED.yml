@@ -1,0 +1,253 @@
+fileVersion: 1
+id: 34992cf6-3a2a-474e-95dd-45e1decab79b
+name: STG_COPILOT_LOGS_CLASSIFIED
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: AI classification layer for Copilot logs text fields using Snowflake Cortex AI_CLASSIFY
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-db4da4f30d93
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e91-77ae-b3e2-09d474c87332
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-ddbb24b6d1ce
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SERVICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-8099-f9d6f669dcd9
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-e1161c2d6fc4
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: USERID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-8099-ffa8ef6377d3
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3068-bf1b-7361-8d54-40483aeef7c0
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CUSTOMER_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3063-29db-710c-a643-e5e0db7cd73c
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-e552e4fe8c0b
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPANY_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-021f7b31ef8b
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-e9ac3fb9704a
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SESSIONID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-06af6c985b03
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-ed0cf7328e64
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: THREADID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-09684fe9d51f
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-f0792f43093f
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MESSAGE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-182864732016
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-f633dd2e732f
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EVENT_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-13c8c5616560
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-f89bd1ef0bd2
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: USER_CHAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-2eeb32229eec
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a94-fcdab69aa4fa
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LLM_RESPONSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0df5-8bf9-76ea-8c9d-2c88a5523c44
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a95-03640f7daf6d
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FEEDBACK_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0e67-2aac-730f-b6a3-e043d5b518f2
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a95-07faf9821766
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: USER_CHAT_CLASSIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0d71-1e92-76fa-809a-2eeb32229eec
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: CASE WHEN STG_COPILOT_LOGS."USER_CHAT" IS NOT NULL AND LENGTH(TRIM(STG_COPILOT_LOGS."USER_CHAT")) >= 5 AND STG_COPILOT_LOGS."USER_CHAT" NOT LIKE '%null%' THEN SNOWFLAKE.CORTEX.AI_CLASSIFY(TRIM(STG_COPILOT_LOGS."USER_CHAT"), ['create_node', 'update_node', 'delete_node', 'sql_help', 'data_modeling', 'troubleshooting', 'general_question', 'other']):label::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a95-08f1fd047fff
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LLM_RESPONSE_CLASSIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0df5-8bf9-76ea-8c9d-2c88a5523c44
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: CASE WHEN STG_COPILOT_LOGS."LLM_RESPONSE" IS NOT NULL AND LENGTH(TRIM(STG_COPILOT_LOGS."LLM_RESPONSE")) >= 5 AND STG_COPILOT_LOGS."LLM_RESPONSE" NOT LIKE '%null%' THEN SNOWFLAKE.CORTEX.AI_CLASSIFY(TRIM(STG_COPILOT_LOGS."LLM_RESPONSE"), ['node_created', 'node_updated', 'sql_provided', 'explanation', 'error_response', 'suggestion', 'confirmation', 'other']):label::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0f73-ea6a-7129-9a95-0c6cf8334ac5
+          stepCounter: 34992cf6-3a2a-474e-95dd-45e1decab79b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FEEDBACK_CLASSIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a0e67-2aac-730f-b6a3-e043d5b518f2
+                stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+            transform: CASE WHEN STG_COPILOT_LOGS."FEEDBACK_TEXT" IS NOT NULL AND LENGTH(TRIM(STG_COPILOT_LOGS."FEEDBACK_TEXT")) >= 5 AND STG_COPILOT_LOGS."FEEDBACK_TEXT" NOT LIKE '%null%' THEN SNOWFLAKE.CORTEX.AI_CLASSIFY(TRIM(STG_COPILOT_LOGS."FEEDBACK_TEXT"), ['positive', 'negative', 'neutral', 'bug_report', 'feature_request', 'compliment', 'complaint', 'other']):label::VARCHAR END
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_COPILOT_LOGS: d3eac972-d150-45ad-8c3b-f2994834bd30
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STG_COPILOT_LOGS
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'STG_COPILOT_LOGS') }} STG_COPILOT_LOGS
+        name: STG_COPILOT_LOGS_CLASSIFIED
+        noLinkRefs: []
+  name: STG_COPILOT_LOGS_CLASSIFIED
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

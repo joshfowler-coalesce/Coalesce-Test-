@@ -1,0 +1,31 @@
+config:
+  entities:
+    nodeTypes:
+      "261":
+        defaultStorageLocation: null
+        isDisabled: false
+      "262":
+        defaultStorageLocation: null
+        isDisabled: false
+      "271":
+        defaultStorageLocation: null
+        isDisabled: false
+      "279":
+        defaultStorageLocation: null
+        isDisabled: false
+      "337":
+        defaultStorageLocation: null
+        isDisabled: false
+      "429":
+        defaultStorageLocation: null
+        isDisabled: false
+      "499":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-cortex"
+name: cortex
+packageID: "@coalesce/snowflake/devcopied-cortex"
+releaseID: 63821edf-a58f-4134-9e1d-12c466519c2b
+type: Package

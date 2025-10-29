@@ -1,0 +1,22 @@
+config:
+  entities:
+    nodeTypes:
+      "305":
+        defaultStorageLocation: null
+        isDisabled: false
+      "307":
+        defaultStorageLocation: null
+        isDisabled: false
+      "320":
+        defaultStorageLocation: null
+        isDisabled: false
+      "321":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-iceberg-tables"
+name: iceberg-tables
+packageID: "@coalesce/snowflake/devcopied-iceberg-tables"
+releaseID: d1a0949b-30e4-4778-b22b-f73ff85e9620
+type: Package

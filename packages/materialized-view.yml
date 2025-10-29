@@ -1,0 +1,13 @@
+config:
+  entities:
+    nodeTypes:
+      "178":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-materialized-view"
+name: materialized-view
+packageID: "@coalesce/snowflake/devcopied-materialized-view"
+releaseID: cd3f9153-928c-4ab2-88b1-a5df80a4538f
+type: Package

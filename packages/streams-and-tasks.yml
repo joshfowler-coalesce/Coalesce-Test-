@@ -1,0 +1,40 @@
+config:
+  entities:
+    nodeTypes:
+      "149":
+        defaultStorageLocation: null
+        isDisabled: false
+      "150":
+        defaultStorageLocation: null
+        isDisabled: false
+      "151":
+        defaultStorageLocation: null
+        isDisabled: false
+      "152":
+        defaultStorageLocation: null
+        isDisabled: false
+      "153":
+        defaultStorageLocation: null
+        isDisabled: false
+      "154":
+        defaultStorageLocation: null
+        isDisabled: false
+      "155":
+        defaultStorageLocation: null
+        isDisabled: false
+      "428":
+        defaultStorageLocation: null
+        isDisabled: false
+      "483":
+        defaultStorageLocation: null
+        isDisabled: false
+      "567":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-streams-and-tasks"
+name: streams-and-tasks
+packageID: "@coalesce/snowflake/devcopied-streams-and-tasks"
+releaseID: 58d19fb2-79fb-4afc-8cbb-32b6a4ef3c33
+type: Package

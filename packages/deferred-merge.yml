@@ -1,0 +1,16 @@
+config:
+  entities:
+    nodeTypes:
+      "300":
+        defaultStorageLocation: null
+        isDisabled: false
+      "301":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-deferred-merge"
+name: deferred-merge
+packageID: "@coalesce/snowflake/devcopied-deferred-merge"
+releaseID: 9fdb9d9a-bcbc-40af-8c1c-77e8ff4255bb
+type: Package

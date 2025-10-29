@@ -1,0 +1,10 @@
+config:
+  entities:
+    nodeTypes: {}
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-test-utility"
+name: test-utility
+packageID: "@coalesce/snowflake/devcopied-test-utility"
+releaseID: 30f87c32-e942-422d-a46c-42b741b9076e
+type: Package

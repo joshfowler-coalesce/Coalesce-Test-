@@ -1,0 +1,6 @@
+fileVersion: 1
+id: 326b8624-d999-4c14-a90b-a89234cd274b
+name: Copilot Logs
+steps:
+  - 82b70d09-9fbc-45e3-8b50-9f941a20716d
+type: Subgraph

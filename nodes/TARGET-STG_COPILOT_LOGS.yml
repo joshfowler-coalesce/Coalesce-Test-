@@ -1,0 +1,393 @@
+fileVersion: 1
+id: d3eac972-d150-45ad-8c3b-f2994834bd30
+name: STG_COPILOT_LOGS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Staging layer for Copilot logs with parsed JSON message fields
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e91-77ae-b3e2-09d474c87332
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-31648ae6f0a2
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-8099-f9d6f669dcd9
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SERVICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-35dc6d4d258a
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-8099-ffa8ef6377d3
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: USERID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-3ad58e43c4eb
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3063-29db-710c-a643-e5e0db7cd73c
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CUSTOMER_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-494711de07c3
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-021f7b31ef8b
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPANY_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-3e69363b6073
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-06af6c985b03
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SESSIONID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-437f3f57a630
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-09684fe9d51f
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: THREADID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-46e9eb22b250
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-0c37a18b66a5
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MESSAGE_RAW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-13c8c5616560
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EVENT_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-182864732016
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MESSAGE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):id::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-1febac316882
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TOOL_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):toolName::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-210737d51685
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ERROR_MESSAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE") IS NULL THEN STG_COPILOT_LOGS_RAW."MESSAGE" ELSE TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):error::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-25e3109225d6
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: RESPONSE_TIME_MS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):durationMs::NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-28a3b1ba995b
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOKEN_COUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):tokenCount::NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d71-1e92-76fa-809a-2eeb32229eec
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: USER_CHAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'UserSent' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0df5-8bf9-76ea-8c9d-2c88a5523c44
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LLM_RESPONSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'LLMResponseReceived' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0e7a-256b-766c-a250-07b6cecf6fa7
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MESSAGE_CLASSIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'UserSent' AND TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR IS NOT NULL AND LENGTH(TRIM(TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR)) >= 5 AND TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR NOT LIKE '%null%' THEN SNOWFLAKE.CORTEX.AI_CLASSIFY(TRIM(TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR), ['create_node', 'update_node', 'delete_node', 'sql_help', 'data_modeling', 'troubleshooting', 'general_question', 'other']):labels[0]::VARCHAR WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'LLMResponseReceived' AND TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR IS NOT NULL AND LENGTH(TRIM(TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR)) >= 5 AND TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR NOT LIKE '%null%' THEN SNOWFLAKE.CORTEX.AI_CLASSIFY(TRIM(TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR), ['node_created', 'node_updated', 'sql_provided', 'explanation', 'error_response', 'suggestion', 'confirmation', 'other']):labels[0]::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0e50-5732-71bc-ba8a-71652bfdfc18
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FEEDBACK_RATING
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'UserFeedback' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):rating::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0e67-2aac-730f-b6a3-e043d5b518f2
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FEEDBACK_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'UserFeedback' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0e67-2aac-730f-b6a3-e7f5ca58123c
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FEEDBACK_SENTIMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'UserFeedback' AND TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR IS NOT NULL THEN SNOWFLAKE.CORTEX.SENTIMENT(TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):text::VARCHAR) END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0d72-68ef-74aa-9a46-cf5160700c0b
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: IS_JSON_MESSAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE") IS NOT NULL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0dfd-1f76-737e-9748-8e8c623f4f47
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: INPUT_TOKENS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'LLMResponseReceived' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):usage['inputTokens']::NUMBER END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0dfd-1f76-737e-9748-9369ede0b519
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: OUTPUT_TOKENS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'LLMResponseReceived' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):usage['outputTokens']::NUMBER END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0dfd-1f76-737e-9748-94a9e45b7f04
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_TOKENS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'LLMResponseReceived' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):usage['totalTokens']::NUMBER END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a0dfd-1f76-737e-9748-9bebb34cddaf
+          stepCounter: d3eac972-d150-45ad-8c3b-f2994834bd30
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: CACHED_INPUT_TOKENS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+                stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+            transform: CASE WHEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):type::VARCHAR = 'LLMResponseReceived' THEN TRY_PARSE_JSON(STG_COPILOT_LOGS_RAW."MESSAGE"):usage['cachedInputTokens']::NUMBER END
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_COPILOT_LOGS_RAW: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STG_COPILOT_LOGS_RAW
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'STG_COPILOT_LOGS_RAW') }} STG_COPILOT_LOGS_RAW
+        name: STG_COPILOT_LOGS
+        noLinkRefs: []
+  name: STG_COPILOT_LOGS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,157 @@
+fileVersion: 1
+id: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+name: STG_COPILOT_LOGS_RAW
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Intermediate staging layer that cleanses raw message field by removing 'event ' prefix
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-31648ae6f0a2
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b339982-d016-4e42-b23c-b253af3b7cef
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-35dc6d4d258a
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SERVICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a67015cc-f44e-4eb7-bc60-70f8ca12684d
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-3ad58e43c4eb
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: USERID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e948e71-5cff-4deb-81e2-8d85d74dba27
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-3e69363b6073
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPANY_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb46727f-b513-4e87-9bc3-805861e5fd1a
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-437f3f57a630
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SESSIONID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7f912d6-d136-4728-960e-986d2dca4a9b
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-46e9eb22b250
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: THREADID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24e44f2b-61b2-4c18-a8a0-abd205c2569f
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-494711de07c3
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CUSTOMERTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d2248acd-8a24-4516-966f-3dc3e708802d
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a3070-85ef-771c-8f3f-4c4965cb861c
+          stepCounter: 47331e15-24c0-4de0-a1bc-851f613fcc5b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MESSAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2c1a7bf-0e3a-4b6a-b2af-6160e92511d6
+                stepCounter: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+            transform: REGEXP_REPLACE(COPILOT_LOGS_RAW_NEW."MESSAGE", '^event ', '')
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          COPILOT_LOGS_RAW_NEW: 82b70d09-9fbc-45e3-8b50-9f941a20716d
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: COPILOT_LOGS_RAW_NEW
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'COPILOT_LOGS_RAW_NEW') }} COPILOT_LOGS_RAW_NEW
+            QUALIFY ROW_NUMBER() OVER (PARTITION BY DATE, SERVICE, USERID, COMPANY_NAME, SESSIONID, THREADID, CUSTOMERTYPE, MESSAGE ORDER BY DATE) = 1
+        name: STG_COPILOT_LOGS_RAW
+        noLinkRefs: []
+  name: STG_COPILOT_LOGS_RAW
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
