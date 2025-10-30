@@ -1,0 +1,19 @@
+config:
+  entities:
+    nodeTypes:
+      "347":
+        defaultStorageLocation: null
+        isDisabled: false
+      "350":
+        defaultStorageLocation: null
+        isDisabled: false
+      "351":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/snowflake/devcopied-dynamic-tables"
+name: dynamic-tables-old
+packageID: "@coalesce/snowflake/devcopied-dynamic-tables"
+releaseID: 87b98078-f53a-44b0-b1b6-c93935bd2791
+type: Package
